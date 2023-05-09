@@ -22,7 +22,7 @@ def create_app():
             new_filename = uuid.uuid4().hex + '.' + uploaded_file.filename.rsplit('.', 1)[1].lower()
 
             bucket_name = "cloudgroup2"
-            s3 = boto3.resource("s3", aws_access_key_id="AKIAYJFM4ABLWZ2KAXU4",aws_secret_access_key="JX6FzggSa7fp/hTWrTh4pKM9PziYsTHmKpOeMBco")
+            s3 = boto3.resource("s3", aws_access_key_id=YOUR_ACCESS_KEY,aws_secret_access_key=YOUR_AWS_SECRET_KEY)
             s3.Bucket(bucket_name).upload_fileobj(uploaded_file, new_filename)
 
 
